@@ -8,52 +8,52 @@ class QualiVerdeApp {
         this.fruits = {
             banana: {
                 name: 'Banana',
-                icon: 'fas fa-seedling',
+                emoji: '🍌',
                 characteristics: ['Cor amarela vibrante', 'Casca sem manchas escuras', 'Textura firme', 'Aroma doce']
             },
             maca: {
                 name: 'Maçã',
-                icon: 'fas fa-apple-alt',
+                emoji: '🍎',
                 characteristics: ['Cor vermelha/verde uniforme', 'Casca lisa e brilhante', 'Textura crocante', 'Sem amassados']
             },
             laranja: {
                 name: 'Laranja',
-                icon: 'fas fa-circle',
+                emoji: '🍊',
                 characteristics: ['Cor laranja intensa', 'Casca texturizada', 'Peso adequado', 'Aroma cítrico']
             },
             mamao: {
                 name: 'Mamão',
-                icon: 'fas fa-lemon',
+                emoji: '🥭',
                 characteristics: ['Cor amarelo-alaranjada', 'Textura macia', 'Sem manchas escuras', 'Aroma doce']
             },
             uva: {
                 name: 'Uva',
-                icon: 'fas fa-grape-cluster',
+                emoji: '🍇',
                 characteristics: ['Bagos firmes', 'Cor uniforme', 'Sem rachaduras', 'Aderência ao cacho']
             },
             melancia: {
                 name: 'Melancia',
-                icon: 'fas fa-circle',
+                emoji: '🍉',
                 characteristics: ['Casca verde com listras', 'Som oco ao bater', 'Mancha amarela na base', 'Peso adequado']
             },
             abacaxi: {
                 name: 'Abacaxi',
-                icon: 'fas fa-pineapple',
+                emoji: '🍍',
                 characteristics: ['Cor dourada', 'Folhas verdes', 'Aroma doce na base', 'Textura firme']
             },
             manga: {
                 name: 'Manga',
-                icon: 'fas fa-mango',
+                emoji: '🥭',
                 characteristics: ['Cor amarelo-avermelhada', 'Textura macia', 'Aroma doce', 'Sem manchas escuras']
             },
             limao: {
                 name: 'Limão',
-                icon: 'fas fa-lemon',
+                emoji: '🍋',
                 characteristics: ['Cor verde/amarela', 'Casca lisa', 'Peso adequado', 'Aroma cítrico forte']
             },
             morango: {
                 name: 'Morango',
-                icon: 'fas fa-strawberry',
+                emoji: '🍓',
                 characteristics: ['Cor vermelha vibrante', 'Folhas verdes', 'Textura firme', 'Sem partes moles']
             }
         };
@@ -161,7 +161,7 @@ class QualiVerdeApp {
         const qualityScore = Math.floor(Math.random() * 30) + 70; // 70-100%
         
         // Atualizar informações da fruta
-        document.getElementById('fruit-icon').className = fruit.icon;
+        document.getElementById('fruit-icon').textContent = fruit.emoji;
         document.getElementById('fruit-name').textContent = fruit.name;
         
         // Atualizar score de qualidade
