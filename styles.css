@@ -87,16 +87,6 @@ body {
     margin: 0 auto;
 }
 
-.header-icon {
-    font-size: 1.5rem;
-}
-
-.main-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1rem;
-}
-
 /* Scanner Section */
 .scanner-section {
     background: white;
@@ -315,9 +305,8 @@ body {
     transform: translateY(-2px);
 }
 
-.fruit-item i {
+.fruit-item .emoji {
     font-size: 2rem;
-    color: #4CAF50;
     margin-bottom: 0.5rem;
 }
 
@@ -417,7 +406,7 @@ body {
         padding: 0.75rem;
     }
     
-    .fruit-item i {
+    .fruit-item .emoji {
         font-size: 1.5rem;
     }
     
@@ -432,7 +421,7 @@ body {
         height: 150px;
     }
     
-    .leaf-icon {
+    .leaf-icon .emoji {
         font-size: 3rem;
     }
     
@@ -443,4 +432,33 @@ body {
     .fruits-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+}
+
+/* Estilos para Emojis */
+.emoji {
+    font-style: normal;
+    font-size: inherit;
+    display: inline-block;
+}
+
+.leaf-icon .emoji {
+    font-size: 4rem;
+    animation: bounce 2s infinite;
+}
+
+.header-icon.emoji {
+    font-size: 1.5rem;
+}
+
+.fruit-icon .emoji {
+    font-size: 4rem;
+}
+
+.fruit-item .emoji {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.btn .emoji {
+    font-size: 1rem;
 }
