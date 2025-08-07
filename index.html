@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QualiVerde - Scanner de Frutas</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#4CAF50">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Tela Splash -->
+    <div id="splash-screen" class="splash-screen">
+        <div class="splash-content">
+            <div class="leaf-icon">
+                <i class="fas fa-leaf"></i>
+            </div>
+            <h1 class="app-name">QualiVerde</h1>
+            <p class="slogan">Garantindo a Qualidade e Suculência de Seu Alimento...</p>
+            <div class="loading-spinner"></div>
+        </div>
+    </div>
+
+    <!-- Tela Principal -->
+    <div id="main-app" class="main-app hidden">
+        <header class="app-header">
+            <div class="header-content">
+                <i class="fas fa-leaf header-icon"></i>
+                <h1>QualiVerde</h1>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <!-- Scanner Section -->
+            <div id="scanner-section" class="scanner-section">
+                <div class="scanner-header">
+                    <h2>Scanner de Frutas</h2>
+                    <p>Aponte a câmera para a fruta e descubra sua qualidade</p>
+                </div>
+
+                <div class="camera-container">
+                    <video id="camera-feed" class="camera-feed" autoplay playsinline></video>
+                    <canvas id="capture-canvas" class="capture-canvas hidden"></canvas>
+                    <div class="camera-overlay">
+                        <div class="scan-frame"></div>
+                    </div>
+                </div>
+
+                <div class="camera-controls">
+                    <button id="start-camera" class="btn btn-primary">
+                        <i class="fas fa-camera"></i>
+                        Iniciar Câmera
+                    </button>
+                    <button id="capture-photo" class="btn btn-success hidden">
+                        <i class="fas fa-camera-retro"></i>
+                        Capturar Foto
+                    </button>
+                    <button id="stop-camera" class="btn btn-secondary hidden">
+                        <i class="fas fa-stop"></i>
+                        Parar Câmera
+                    </button>
+                </div>
+            </div>
+
+            <!-- Resultado da Análise -->
+            <div id="result-section" class="result-section hidden">
+                <div class="result-header">
+                    <h2>Resultado da Análise</h2>
+                </div>
+                <div class="result-content">
+                    <div class="fruit-info">
+                        <div class="fruit-icon">
+                            <i id="fruit-icon" class="fas fa-apple-alt"></i>
+                        </div>
+                        <h3 id="fruit-name">Fruta Identificada</h3>
+                        <div class="quality-score">
+                            <span>Qualidade:</span>
+                            <div class="score-bar">
+                                <div id="quality-fill" class="score-fill"></div>
+                            </div>
+                            <span id="quality-percentage">0%</span>
+                        </div>
+                    </div>
+                    <div class="fruit-details">
+                        <h4>Características Detectadas:</h4>
+                        <ul id="fruit-characteristics">
+                            <li>Analisando...</li>
+                        </ul>
+                    </div>
+                    <button id="scan-again" class="btn btn-primary">
+                        <i class="fas fa-redo"></i>
+                        Escanear Novamente
+                    </button>
+                </div>
+            </div>
+
+            <!-- Lista de Frutas Suportadas -->
+            <div class="supported-fruits">
+                <h3>Frutas Suportadas</h3>
+                <div class="fruits-grid">
+                    <div class="fruit-item" data-fruit="banana">
+                        <i class="fas fa-seedling"></i>
+                        <span>Banana</span>
+                    </div>
+                    <div class="fruit-item" data-fruit="maca">
+                        <i class="fas fa-apple-alt"></i>
+                        <span>Maçã</span>
+                    </div>
+                    <div class="fruit-item" data-fruit="laranja">
+                        <i class="fas fa-circle"></i>
+                        <span>Laranja</span>
+                    </div>
+                    <div class="fruit-item" data-fruit="mamao">
+                        <i class="fas fa-lemon"></i>
+                        <span>Mamão</span>
+                    </div>
+                    <div class="fruit-item" data-fruit="uva">
+                        <i class="fas fa-grape-cluster"></i>
+                        <span>Uva</span>
+                    </div>
+                    <div class="fruit-item" data-fruit="melancia">
+                        <i class="fas fa-circle"></i>
+                        <span>Melancia</span>
+                    </div>
+                    <div class="fruit-item" data-fruit="abacaxi">
+                        <i class="fas fa-pineapple"></i>
+                        <span>Abacaxi</span>
+                    </div>
+                    <div class="fruit-item" data-fruit="manga">
+                        <i class="fas fa-mango"></i>
+                        <span>Manga</span>
+                    </div>
+                    <div class="fruit-item" data-fruit="limao">
+                        <i class="fas fa-lemon"></i>
+                        <span>Limão</span>
+                    </div>
+                    <div class="fruit-item" data-fruit="morango">
+                        <i class="fas fa-strawberry"></i>
+                        <span>Morango</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
